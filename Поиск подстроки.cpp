@@ -5,15 +5,15 @@ int strstr2(const char* text, const char* pattern)
 {
     int place = 0;
 
-    if (text[0] == '\0' && pattern[0] == '\0')
+    if (*text == '\0' && *pattern == '\0')
         return 0;
 
-    if (pattern[0] == '\0')
+    if (*pattern == '\0')
         return 0;
 
     for (int i = 0; text[i] != '\0'; i++) {
 
-        if (text[i] == pattern[0]) {
+        if (text[i] == *pattern) {
             place = i;
             for (int j = 0; ;) {
                 if (pattern[j] == text[i])
