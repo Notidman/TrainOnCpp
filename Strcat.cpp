@@ -11,11 +11,13 @@ unsigned strlen(const char *str) {
 
 void strcat(char *to, const char *from)
 {
-    int i;
-    unsigned len = strlen(from);
-    unsigned len2 = strlen(to);
-    for(i = 0; i != len2; len++, i++)
-        to[len] = from[i];
+    int i,j;
+    for (i = 0; to[i] != '\0'; i++);
+
+    for (j = 0; from[j] != '\0'; j++)
+        to[i+j] = from[j];
+
+    to[i+j] = '\0';
 }
 
 int main() {
@@ -27,7 +29,7 @@ int main() {
     unsigned l;
 
     strcat(tPtr,tPtr2);
-
+    strcat(tPtr, "...");
     cout << test << endl;
 
     return 0;
